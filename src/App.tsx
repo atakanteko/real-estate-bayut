@@ -1,19 +1,17 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { BrowserRouter } from 'react-router-dom';
 
-import { DatePicker } from 'antd';
 import { ConfigProvider } from 'antd';
 import trTR from 'antd/lib/locale/tr_TR';
 
 import { getLanguageSelector } from './features';
 import { useAppSelector } from './hooks';
+import Router from './routes/routes';
 import { IStore } from './store/IStore';
+import { boToken } from './utils/config/antdToken';
 import { i18n } from './utils/helpers/internationalization';
 
-import './App.css';
-
 const App = () => {
-  const { t } = useTranslation();
   const { language } = useAppSelector((state: IStore) => ({
     language: getLanguageSelector(state),
   }));
@@ -26,9 +24,10 @@ const App = () => {
   }, [language]);
 
   return (
-    <ConfigProvider locale={i18nLocale}>
-      <DatePicker />
-      <h1>{t('test')}</h1>
+    <ConfigProvider locale={i18nLocale} theme={boToken}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </ConfigProvider>
   );
 };

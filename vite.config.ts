@@ -18,6 +18,10 @@ export default defineConfig({
       features: `${path.resolve(__dirname, "./features/")}`,
       utils: `${path.resolve(__dirname, "./utils/")}`,
       hooks: `${path.resolve(__dirname, "./hooks/")}`,
+      components: `${path.resolve(__dirname, "./components/")}`,
+      style: `${path.resolve(__dirname, "./style/")}`,
+      routes: `${path.resolve(__dirname, "./routes/")}`,
+      pages: `${path.resolve(__dirname, "./pages/")}`,
     },
   },
 })

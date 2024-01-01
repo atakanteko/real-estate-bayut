@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --bg: #fff;
+  --textColor: #091638;
+  --bg-gray: #f3f3fa;
+  --colorBlue: #1c3988;
+  /* --textColor: #3b3c4a;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
+  --headingColor: #181a2a;
+  --theme-toggle-bg: #e8e8ea;
+  --logo-color: #111; */
+  /* mdx-variables */
+  /* --blockquote-txt-color: #3c4556;
+  --code-border-color: #21314c; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1216px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .wrapper {
+    max-width: 1024px;
+    padding-inline: 40px;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 670px;
+    padding-inline: 20px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
+  }
+}

@@ -1,0 +1,15 @@
+.navbar-list {
+    display: flex;
+    gap: 24px;
+
+    li {
+        list-style-type: none;
+
+        a {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 34.2px;
+        }
+    }
+}

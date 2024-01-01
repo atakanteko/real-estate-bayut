@@ -32,7 +32,11 @@
       "httpClient/*": ["src/httpClient"],
       "store/*": ["src/store"],
       "features/*": ["src/features"],
-      "utils/*": ["src/utils"]
+      "utils/*": ["src/utils"],
+      "components/*": ["src/components"],
+      "style/*": ["src/style"],
+      "routes/*": ["src/routes"],
+      "pages/*": ["src/pages"]
     }
   },
   "include": ["src"],

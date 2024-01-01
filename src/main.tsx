@@ -8,6 +8,7 @@ import i18n from './localization/i18n.ts';
 import store from './store/config/store.config.ts';
 
 import './index.css';
+import './style/_base.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
