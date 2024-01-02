@@ -2,6 +2,11 @@ import { ThemeConfig } from 'antd'
 
 export const boToken: ThemeConfig = {
     token: {
-        fontFamily: 'Merriweather'
+        fontFamily: 'Roboto'
+    },
+    components: {
+        Card: {
+            padding: 12
+        }
     }
 }

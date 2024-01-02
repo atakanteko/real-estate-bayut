@@ -10,8 +10,16 @@ const routeTree: IRoute[] = [
     element: <AppLayout />,
     children: [
       {
-        path: '/offers',
-        element: LazyLoader(React.lazy(() => import('@/pages/List/index'))),
+        path: '/properties',
+        element: LazyLoader(
+          React.lazy(() => import('@/pages/Properties/List'))
+        ),
+      },
+      {
+        path: '/properties/:id',
+        element: LazyLoader(
+          React.lazy(() => import('@/pages/Properties/Detail'))
+        ),
       },
     ],
   },

@@ -22,6 +22,7 @@ export default defineConfig({
       style: `${path.resolve(__dirname, "./style/")}`,
       routes: `${path.resolve(__dirname, "./routes/")}`,
       pages: `${path.resolve(__dirname, "./pages/")}`,
+      mock: `${path.resolve(__dirname, "./mock/")}`,
     },
   },
 })

@@ -36,7 +36,8 @@
       "components/*": ["src/components"],
       "style/*": ["src/style"],
       "routes/*": ["src/routes"],
-      "pages/*": ["src/pages"]
+      "pages/*": ["src/pages"],
+      "mock/*": ["src/mock"]
     }
   },
   "include": ["src"],
