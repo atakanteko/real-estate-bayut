@@ -9,12 +9,13 @@ import { Avatar, Card, Divider, Flex, Typography } from 'antd';
 import millify from 'millify';
 
 import { offersExampleImg } from '@/assets';
-import { PropertyItemType } from '@/types/properties';
-type PropertyItem = {
-  propertyFeatures: PropertyItemType;
-};
+import { PropertyItem as PropertyType } from '@/types/properties';
 
-const PropertyItem = ({ propertyFeatures }: PropertyItem) => {
+const PropertyItem = ({
+  propertyFeatures,
+}: {
+  propertyFeatures: PropertyType;
+}) => {
   console.log(propertyFeatures.externalID);
   return (
     <Link to={`${propertyFeatures.externalID}`} relative="route">

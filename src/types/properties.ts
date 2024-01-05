@@ -81,7 +81,7 @@ type Agency = {
     performanceCohort: string;
 };
 
-export type PropertyItemType = {
+export type PropertyItem = {
     id: number;
     ownerID: number;
     userExternalID: string;
@@ -180,4 +180,16 @@ export type PropertyItemType = {
     plotArea: null | string;
     objectID: string;
     _highlightResult: any;
-};
+}
+
+export type PropertyItemType = {
+    hits: PropertyItem[];
+}
+
+declare namespace PropertiesTypeSpace {
+    type PropertyListArgument = {
+        locationExternalIDs: string
+    }
+}
+
+export type { PropertiesTypeSpace }

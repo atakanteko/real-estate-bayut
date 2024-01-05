@@ -1,7 +1,7 @@
 import { PropertyItemType } from "@/types/properties";
 
-export const mockPropertyItem: PropertyItemType[] = [
-    {
+export const mockPropertyItem: PropertyItemType = {
+    hits: [{
         "id": 3323567,
         "ownerID": 2025878,
         "userExternalID": "2025878",
@@ -3423,5 +3423,5 @@ export const mockPropertyItem: PropertyItemType[] = [
                 }
             ]
         }
-    }
-]
+    }]
+}

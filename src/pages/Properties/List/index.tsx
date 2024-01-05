@@ -1,13 +1,20 @@
 import { Col, Row } from 'antd';
 
+import { usePropertyListQuery } from '@/api/properties/properties.api';
 import PropertyItem from '@/components/Pages/Properties/List/PropertyItem';
-import { mockPropertyItem } from '@/mock/properties';
-
 const PropertyList = () => {
+  const { data, isLoading } = usePropertyListQuery({
+    locationExternalIDs: '5002,6020',
+  });
+
+  console.log(data?.hits);
+  if (isLoading) {
+    return <h1>Loading</h1>;
+  }
   return (
     <div className="wrapper">
       <Row gutter={[24, 24]}>
-        {mockPropertyItem.map((item) => (
+        {data?.hits.map((item) => (
           <Col xs={24} sm={12} lg={8} key={item.id}>
             <PropertyItem propertyFeatures={item} />
           </Col>

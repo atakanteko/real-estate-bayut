@@ -5,7 +5,8 @@ import { axiosBaseQuery } from "@/httpClient/baseFetch";
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: axiosBaseQuery({
-        baseUrl: '',
+        baseUrl: 'https://bayut.p.rapidapi.com',
+
     }),
     endpoints: () => ({}),
 });

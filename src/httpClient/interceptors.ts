@@ -8,6 +8,8 @@ import {
 const onRequest = (config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     config.headers.Accept = "application/json";
     config.headers["Content-Type"] = "application/json; charset=UTF-8";
+    config.headers['X-RapidAPI-Key'] = 'c578459bf7mshb64d17e9ed8378ap1f2f5djsn9dc08d711fef';
+    config.headers['X-RapidAPI-Host'] = 'bayut.p.rapidapi.com';
     return config;
 };
 

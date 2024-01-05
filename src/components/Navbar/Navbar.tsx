@@ -13,10 +13,10 @@ const Navbar = () => {
             <img src={appLogo} alt="logo" />
             <ul className="navbar-list">
               <li>
-                <Link to={`contacts/1`}>Home</Link>
+                <Link to={`/`}>Home</Link>
               </li>
               <li>
-                <Link to={`contacts/2`}>Search In Offers</Link>
+                <Link to={`/properties`}>Search In Offers</Link>
               </li>
               <li>
                 <Link to={`contacts/2`}>About Us</Link>

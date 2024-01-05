@@ -10,6 +10,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh','simple-import-sort'],
   rules: {
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-explicit-any": ["off"],
     "simple-import-sort/imports": "error",
     //if we want to group imports can use below.
