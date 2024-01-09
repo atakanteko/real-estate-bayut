@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Col, Row } from 'antd';
 
 import { usePropertyListQuery } from '@/api/properties/properties.api';
@@ -6,9 +8,11 @@ import Filter from '@/components/Filter';
 import PropertyItem from '@/components/Pages/Properties/List/PropertyItem';
 import GlobalSpinner from '@/components/UI/Loader';
 import { FilterUtil } from '@/utils/filter/filterData';
+
+import PropertiesListContainer from './Properties.List.Container';
+
 const PropertyList = () => {
   // const propertyListFetch = propertiesApi.endpoints.propertyList;
-
   // const { data, isLoading } = usePropertyListQuery({
   //   locationExternalIDs: '5002,6020',
   // });
@@ -16,10 +20,12 @@ const PropertyList = () => {
   // if (isLoading) {
   //   return <GlobalSpinner isLoading={isLoading} isFullscreen />;
   // }
+
   return (
     <div className="wrapper">
+      <PropertiesListContainer />
       <Row gutter={[24, 24]}>
-        <Filter />
+        {/* <Filter /> */}
         {/* {[]?.hits.map((item) => (
           <Col xs={24} sm={12} lg={8} key={item.id}>
             <PropertyItem propertyFeatures={item} />

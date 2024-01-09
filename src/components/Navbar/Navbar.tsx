@@ -16,6 +16,7 @@ const Navbar = () => {
 
   const onClick: MenuProps['onClick'] = (e) => {
     if (e.key === 'for-sale' || e.key === 'for-rent') {
+      setCurrent(e.key);
       setSearchParams({ purpose: e.key });
       dispath(FilterActions.updateFilter({ name: 'purpose', value: e.key }));
       return;

@@ -1,6 +1,11 @@
 import { FiltersTypeSpace } from "@/types/filter";
 
-const filterData = [
+const propertyFilterData: FiltersTypeSpace.FilterData = [
+    // {
+    //     placeholder: 'Test',
+    //     queryName: 'search',
+    //     type: 'input'
+    // },
     {
         items: [
             { label: 'Buy', value: 'for-sale' },
@@ -8,6 +13,11 @@ const filterData = [
         ],
         placeholder: 'Purpose',
         queryName: 'purpose',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -18,6 +28,11 @@ const filterData = [
         ],
         placeholder: 'Rent Frequency',
         queryName: 'rentFrequency',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -31,6 +46,11 @@ const filterData = [
         ],
         placeholder: 'Min Price(AED)',
         queryName: 'minPrice',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -53,6 +73,11 @@ const filterData = [
         ],
         placeholder: 'Max Price(AED)',
         queryName: 'maxPrice',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -65,6 +90,11 @@ const filterData = [
         ],
         placeholder: 'Sort',
         queryName: 'sort',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -78,6 +108,11 @@ const filterData = [
         ],
         placeholder: 'Max Area(sqft)',
         queryName: 'areaMax',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -94,6 +129,11 @@ const filterData = [
         ],
         placeholder: 'Rooms',
         queryName: 'roomsMin',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -110,6 +150,11 @@ const filterData = [
         ],
         placeholder: 'Baths',
         queryName: 'bathsMin',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -118,6 +163,11 @@ const filterData = [
         ],
         placeholder: 'Furnish Type',
         queryName: 'furnishingStatus',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
     {
         items: [
@@ -133,73 +183,17 @@ const filterData = [
         ],
         placeholder: 'Property Type',
         queryName: 'categoryExternalID',
+        type: 'select',
+        columnSize: {
+            xs: 24,
+            md: 6
+        }
     },
-] as const;
+];
 
-const queryNames = filterData.map(item => item.queryName);
-
-
-const getFilterValues = (filterValues) => {
-    const {
-        purpose,
-        rentFrequency,
-        categoryExternalID,
-        minPrice,
-        maxPrice,
-        areaMax,
-        roomsMin,
-        bathsMin,
-        sort,
-        locationExternalIDs,
-    } = filterValues;
-
-    const values = [
-        {
-            name: 'purpose',
-            value: purpose,
-        },
-        {
-            name: 'rentFrequency',
-            value: rentFrequency,
-        },
-        {
-            name: 'minPrice',
-            value: minPrice,
-        },
-        {
-            name: 'maxPrice',
-            value: maxPrice,
-        },
-        {
-            name: 'areaMax',
-            value: areaMax,
-        },
-        {
-            name: 'roomsMin',
-            value: roomsMin,
-        },
-        {
-            name: 'bathsMin',
-            value: bathsMin,
-        },
-        {
-            name: 'sort',
-            value: sort,
-        },
-        {
-            name: 'locationExternalIDs',
-            value: locationExternalIDs,
-        },
-        {
-            name: 'categoryExternalID',
-            value: categoryExternalID,
-        },
-    ];
-
-    return values;
-};
+const propertyQueryNames = ['purpose', 'rentFrequency', 'minPrice', 'maxPrice', 'sort', 'areaMax', 'roomsMin', 'bathsMin', 'furnishingStatus', 'categoryExternalID'] as const;
 
 export const FilterUtil = {
-    queryNames,
-    filterData
+    propertyQueryNames,
+    propertyFilterData
 }

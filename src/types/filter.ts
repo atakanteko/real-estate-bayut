@@ -1,21 +1,23 @@
 import { FilterUtil } from "@/utils/filter/filterData";
-
-type FilterItem = {
-    label: string;
-    value: string;
-};
-
-type FilterCategory = {
-    items: FilterItem[];
-    placeholder: string;
-    queryName: string;
-};
-
-
 declare namespace FiltersTypeSpace {
+    type ColumnTypes = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+
+    type FilterItem = {
+        label: string;
+        value: string;
+    };
+
+    type FilterCategory = {
+        items?: FilterItem[];
+        placeholder: string;
+        queryName: string;
+        type: 'select' | 'input' | 'date'
+        columnSize?: Partial<Record<ColumnTypes, number>>
+    };
+
     type FilterData = FilterCategory[];
 
-    type QueryNameParam = typeof FilterUtil.queryNames[number]
+    type QueryNameParam = typeof FilterUtil.propertyQueryNames[number]
 
     type QueryNames = Record<QueryNameParam, number | string>
 
