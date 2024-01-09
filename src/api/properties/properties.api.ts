@@ -3,6 +3,7 @@ import { ObjectToQueryString } from "@/utils/helpers";
 
 import { apiSlice } from "../api";
 import { propertyEndpoints } from "./properties.endpoints";
+
 const propertiesApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         propertyList: builder.query<PropertyItemType, PropertiesTypeSpace.PropertyListArgument>({
@@ -18,3 +19,5 @@ const propertiesApi = apiSlice.injectEndpoints({
 export const {
     usePropertyListQuery
 } = propertiesApi
+
+export default propertiesApi

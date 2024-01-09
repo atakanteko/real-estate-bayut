@@ -189,6 +189,7 @@ export type PropertyItemType = {
 declare namespace PropertiesTypeSpace {
     type PropertyListArgument = {
         locationExternalIDs: string
+        purpose?: string
     }
 }
 

@@ -1,6 +1,6 @@
 import { Spin } from 'antd';
 
-const GloabalSpinner = ({
+const GlobalSpinner = ({
   isLoading = false,
   isFullscreen = false,
 }: {
@@ -10,4 +10,4 @@ const GloabalSpinner = ({
   return <Spin spinning={isLoading} fullscreen={isFullscreen} />;
 };
 
-export default GloabalSpinner;
+export default GlobalSpinner;

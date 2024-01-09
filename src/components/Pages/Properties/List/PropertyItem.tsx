@@ -16,7 +16,6 @@ const PropertyItem = ({
 }: {
   propertyFeatures: PropertyType;
 }) => {
-  console.log(propertyFeatures.externalID);
   return (
     <Link to={`${propertyFeatures.externalID}`} relative="route">
       <Card

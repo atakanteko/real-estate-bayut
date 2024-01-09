@@ -1,30 +1,43 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { Button, Col, Flex, Row } from 'antd';
+import type { MenuProps } from 'antd';
+import { Button, Col, Flex, Menu, Row } from 'antd';
 
 import { appLogo } from '@/assets';
+import { FilterActions } from '@/features';
+import { useAppDispatch } from '@/hooks';
 
+import { MenuItems } from './Container';
 const Navbar = () => {
+  const [current, setCurrent] = React.useState('home');
+  const dispath = useAppDispatch();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    if (e.key === 'for-sale' || e.key === 'for-rent') {
+      setSearchParams({ purpose: e.key });
+      dispath(FilterActions.updateFilter({ name: 'purpose', value: e.key }));
+      return;
+    }
+    setCurrent(e.key);
+    setSearchParams();
+    dispath(FilterActions.resetFilter());
+  };
+
   return (
     <nav className="wrapper">
       <Row align="middle">
         <Col md={20}>
-          <Flex gap={72} align="center">
+          <Flex gap={18} align="center">
             <img src={appLogo} alt="logo" />
-            <ul className="navbar-list">
-              <li>
-                <Link to={`/`}>Home</Link>
-              </li>
-              <li>
-                <Link to={`/properties`}>Search In Offers</Link>
-              </li>
-              <li>
-                <Link to={`contacts/2`}>About Us</Link>
-              </li>
-              <li>
-                <Link to={`contacts/2`}>Our Team</Link>
-              </li>
-            </ul>
+            <Menu
+              style={{ width: '100%' }}
+              onClick={onClick}
+              selectedKeys={[current]}
+              mode="horizontal"
+              items={MenuItems}
+            />
           </Flex>
         </Col>
         <Col md={4}>
