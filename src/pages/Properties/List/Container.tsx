@@ -5,6 +5,7 @@ import { Col, Row } from 'antd';
 
 import propertiesApi from '@/api/properties/properties.api';
 import Filter from '@/components/Filter';
+import PropertyListPageBanner from '@/components/Pages/Properties/List/Banner';
 import PropertyItem from '@/components/Pages/Properties/List/PropertyItem';
 import GlobalSpinner from '@/components/UI/Loader';
 import { getFilterParams, propertyActions } from '@/features';
@@ -18,20 +19,24 @@ const PropertiesListContainer = () => {
   const [getPropertyList, result, lastPromiseInfo] =
     propertyListFetch.useLazyQuery();
 
-  React.useMemo(async () => {
-    const response = await getPropertyList({ ...filterParams });
-    if (response.data?.hits && !response.isError) {
-      dispatch(propertyActions.updatePropertList(response.data.hits));
-    }
-  }, [filterParams, getPropertyList, dispatch]);
-
-  // if (propertyData.isLoading && !propertyData.data.hits.length) {
-  //   return <GlobalSpinner isLoading={propertyData.isLoading} isFullscreen />;
-  // }
+  // React.useMemo(async () => {
+  //   const response = await getPropertyList({ ...filterParams });
+  //   if (response.data?.hits && !response.isError) {
+  //     dispatch(propertyActions.updatePropertList(response.data.hits));
+  //   }
+  // }, [filterParams, getPropertyList, dispatch]);
 
   return (
-    <div>
-      <Filter data={FilterUtil.propertyFilterData} />
+    <>
+      <PropertyListPageBanner />
+      <Filter
+        data={FilterUtil.propertyFilterData}
+        style={{
+          background: '#F3F3FA',
+          paddingTop: '40px',
+          paddingBottom: '40px',
+        }}
+      />
       {}
       {/* <Row gutter={[24, 24]}>
         {propertyData?.data?.hits?.map((item) => (
@@ -40,7 +45,7 @@ const PropertiesListContainer = () => {
           </Col>
         ))}
       </Row> */}
-    </div>
+    </>
   );
 };
 

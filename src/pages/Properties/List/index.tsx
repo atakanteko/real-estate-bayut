@@ -1,10 +1,10 @@
-import PropertiesListContainer from './Properties.List.Container';
+import PropertiesListContainer from './Container';
 
 const PropertyList = () => {
   return (
-    <div className="wrapper">
+    <>
       <PropertiesListContainer />
-    </div>
+    </>
   );
 };
 

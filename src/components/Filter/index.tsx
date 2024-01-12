@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
-import { Col, Row, Select } from 'antd';
+import { Col, Flex, Row, Select } from 'antd';
 
 import { FilterActions } from '@/features';
 import { useAppDispatch } from '@/hooks';
@@ -8,7 +8,13 @@ import { FiltersTypeSpace } from '@/types/filter';
 
 import InputGenerator from './InputGenerator';
 
-const Filter = ({ data }: { data: FiltersTypeSpace.FilterData }) => {
+const Filter = ({
+  data,
+  style,
+}: {
+  data: FiltersTypeSpace.FilterData;
+  style: CSSProperties;
+}) => {
   const [filterList, setFilterList] =
     React.useState<FiltersTypeSpace.FilterData>([]);
 
@@ -50,11 +56,19 @@ const Filter = ({ data }: { data: FiltersTypeSpace.FilterData }) => {
 
   {
     return (
-      <Row gutter={[12, 12]}>
-        {filterList?.map((item, index) => (
-          <InputGenerator item={item} key={index} handleChange={handleChange} />
-        ))}
-      </Row>
+      <div style={{ ...style }}>
+        <div className="wrapper">
+          <Row gutter={[12, 12]}>
+            {filterList?.map((item, index) => (
+              <InputGenerator
+                item={item}
+                key={index}
+                handleChange={handleChange}
+              />
+            ))}
+          </Row>
+        </div>
+      </div>
     );
   }
 };
