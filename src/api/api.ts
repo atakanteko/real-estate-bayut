@@ -6,7 +6,6 @@ export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: axiosBaseQuery({
         baseUrl: 'https://bayut.p.rapidapi.com',
-
     }),
     endpoints: () => ({}),
 });

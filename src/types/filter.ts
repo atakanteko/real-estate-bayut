@@ -19,7 +19,7 @@ declare namespace FiltersTypeSpace {
 
     type QueryNameParam = typeof FilterUtil.propertyQueryNames[number]
 
-    type QueryNames = Record<QueryNameParam, number | string>
+    type QueryNames = Partial<Record<QueryNameParam, number | string>>
 
     interface IFilterState {
         filterName: Partial<QueryNames>

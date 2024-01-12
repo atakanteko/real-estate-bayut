@@ -1,14 +1,15 @@
 import { combineReducers, Reducer, UnknownAction } from 'redux'
 
 import { apiSlice } from '@/api/api'
-import { filterSlice, systemSlice } from '@/features'
+import { filterSlice, propertySlice, systemSlice } from '@/features'
 
 import { IStore } from './IStore'
 
 const appReducer: Reducer<IStore> = combineReducers({
     [apiSlice.reducerPath]: apiSlice.reducer,
     system: systemSlice,
-    filter: filterSlice
+    filter: filterSlice,
+    property: propertySlice
 })
 
 const rootReducer = (

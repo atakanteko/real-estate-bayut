@@ -1,4 +1,4 @@
-export function ObjectToQueryString(value: any): string {
+export function objectToQueryString(value: any): string {
     return "?" + _ObjectToQueryString(value)
 }
 
@@ -37,8 +37,6 @@ function _ObjectToQueryString(value: any, parameterPath: string = ""): string {
         const parameterList: string[] = [];
 
         for (const property in value) {
-            console.log('property', property)
-            console.log('value', value)
             // eslint-disable-next-line no-prototype-builtins
             if (value.hasOwnProperty(property) === false) {
                 continue;

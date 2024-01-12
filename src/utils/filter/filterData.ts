@@ -191,7 +191,7 @@ const propertyFilterData: FiltersTypeSpace.FilterData = [
     },
 ];
 
-const propertyQueryNames = ['purpose', 'rentFrequency', 'minPrice', 'maxPrice', 'sort', 'areaMax', 'roomsMin', 'bathsMin', 'furnishingStatus', 'categoryExternalID'] as const;
+const propertyQueryNames = ['locationExternalIDs', 'purpose', 'rentFrequency', 'minPrice', 'maxPrice', 'sort', 'areaMax', 'roomsMin', 'bathsMin', 'furnishingStatus', 'categoryExternalID'] as const;
 
 export const FilterUtil = {
     propertyQueryNames,

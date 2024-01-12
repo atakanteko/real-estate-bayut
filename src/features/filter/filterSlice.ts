@@ -3,7 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { FiltersTypeSpace } from '@/types/filter'
 
 const initialState: FiltersTypeSpace.IFilterState = {
-    filterName: {}
+    filterName: {
+        locationExternalIDs: '5002,6020'
+    }
 }
 
 const filterSlice = createSlice({
