@@ -15,24 +15,25 @@ const Navbar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onClick: MenuProps['onClick'] = (e) => {
-    if (e.key === 'for-sale' || e.key === 'for-rent') {
-      setCurrent(e.key);
-      setSearchParams({ purpose: e.key });
-      dispath(FilterActions.updateFilter({ name: 'purpose', value: e.key }));
-      return;
-    }
+    // if (e.key === 'for-sale' || e.key === 'for-rent') {
+    //   setCurrent(e.key);
+    //   setSearchParams({ purpose: e.key });
+    //   dispath(FilterActions.updateFilter({ name: 'purpose', value: e.key }));
+    //   return;
+    // }
     setCurrent(e.key);
     setSearchParams();
     dispath(FilterActions.resetFilter());
   };
 
   return (
-    <nav className="wrapper">
+    <nav className="wrapper bayut-navbar">
       <Row align="middle">
         <Col md={20}>
           <Flex gap={18} align="center">
             <img src={appLogo} alt="logo" />
             <Menu
+              className="bayut-menu"
               style={{ width: '100%' }}
               onClick={onClick}
               selectedKeys={[current]}
@@ -43,7 +44,7 @@ const Navbar = () => {
         </Col>
         <Col md={4}>
           <Flex justify="flex-end">
-            <Button>Contact Us</Button>
+            <Button style={{ height: '40px' }}>Contact Us</Button>
           </Flex>
         </Col>
       </Row>
