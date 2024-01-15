@@ -5,7 +5,7 @@ const GlobalSpinner = ({
   isFullscreen = false,
 }: {
   isLoading: boolean;
-  isFullscreen: boolean;
+  isFullscreen?: boolean;
 }) => {
   return <Spin spinning={isLoading} fullscreen={isFullscreen} />;
 };

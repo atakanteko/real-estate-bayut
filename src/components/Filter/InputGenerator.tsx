@@ -17,11 +17,12 @@ const InputGenerator = ({ item, handleChange }: InputGeneratorProps) => {
           <Col xs={item?.columnSize?.xs || 24} md={item?.columnSize?.md || 6}>
             {item.items && (
               <Select
+                placeholder={item.placeholder}
                 labelInValue
-                defaultValue={{
-                  value: item.items[0].value,
-                  label: item.items[0].label as FiltersTypeSpace.QueryNameParam,
-                }}
+                // defaultValue={{
+                //   value: item.items[0].value,
+                //   label: item.items[0].label as FiltersTypeSpace.QueryNameParam,
+                // }}
                 style={{ width: '100%' }}
                 onChange={(e) =>
                   handleChange({ name: item.queryName, value: e.value })

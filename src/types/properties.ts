@@ -186,14 +186,14 @@ declare namespace PropertiesTypeSpace {
 
     type ApiResponse<T> = {
         hits: T;
-        nbHits: number;
-        page: number;
-        nbPages: number;
-        hitsPerPage: number;
-        processingTimeMS: number;
-        serverTimeMS: number;
-        query: string;
-        params: string;
+        nbHits?: number;
+        page?: number;
+        nbPages?: number;
+        hitsPerPage?: number;
+        processingTimeMS?: number;
+        serverTimeMS?: number;
+        query?: string;
+        params?: string;
     }
 
     type IPropertyState = {

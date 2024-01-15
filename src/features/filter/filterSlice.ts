@@ -13,7 +13,7 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         resetFilter: (state) => {
-            state.filterName = {}
+            state.filterName = { locationExternalIDs: '5002,6020' }
         },
         updateFilter: (state, action: PayloadAction<FiltersTypeSpace.FilterUpdatePayloadType>) => {
             state.filterName[action.payload.name] = action.payload.value

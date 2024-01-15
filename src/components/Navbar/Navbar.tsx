@@ -11,7 +11,7 @@ import { useAppDispatch } from '@/hooks';
 import { MenuItems } from './Container';
 const Navbar = () => {
   const [current, setCurrent] = React.useState('home');
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const onClick: MenuProps['onClick'] = (e) => {
@@ -23,7 +23,7 @@ const Navbar = () => {
     // }
     setCurrent(e.key);
     setSearchParams();
-    dispath(FilterActions.resetFilter());
+    dispatch(FilterActions.resetFilter());
   };
 
   return (
